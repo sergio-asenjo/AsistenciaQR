@@ -1,0 +1,8 @@
+{
+  "name": "AsistenciaQR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "02de55a7"
+}

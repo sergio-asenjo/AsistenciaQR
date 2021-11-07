@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Inicio de Sesión</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-align-self-center" class="ion-padding-top">
+
+  <ion-img style="width: 100%; padding: 10%;" src="assets/img/Logo_DuocUC.png"></ion-img>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Nombre de Usuario</ion-label>
+          <ion-input [(ngModel)]="usuario" type="text" placeholder="Usuario" autofocus="true"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input [(ngModel)]="contrasena" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding">
+      <ion-col size="6" offset="3">
+        <ion-button expand="block" shape="round" class="ion-text-capitalize" (click)="login()">
+          Iniciar Sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-align-items-center" fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" shape="round" color="secondary" class="ion-text-capitalize" (click)="irRecuperar()">
+          <ion-icon slot="start" name="key-outline"></ion-icon> Recuperar Contraseña
+        </ion-button>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button expand="full" shape="round" color="secondary" class="ion-text-capitalize" routerLink="/registrar">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon> Registrarse
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

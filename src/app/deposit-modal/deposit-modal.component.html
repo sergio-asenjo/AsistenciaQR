@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="tittle" >
+      Clase de hoy
+    </ion-title>
+    <ion-buttons slot="end" > 
+          <ion-button (click)= "dismissModal()">
+            <ion-icon name="close-circle-outline" ></ion-icon>
+            cerrar
+          </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-toolbar>
+      <ion-title>Informacion de la Clase</ion-title>
+    </ion-toolbar>
+      <ion-list>
+        <ion-item>
+          <ion-input placeholder="Nombre de clase"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Seccion"></ion-input>
+        </ion-item>
+        <ion-item-divider></ion-item-divider>
+        <ion-item>
+          <ion-label>Fecha de la Clase</ion-label>
+          <ion-datetime value="2021-10-05" placeholder="Select Date"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hora de inicio</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T07:43Z"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hora de Termino</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-textarea placeholder="Observacion"></ion-textarea>
+        </ion-item>
+        
+          <ion-buttons slot="center">
+            <ion-button class="guardar ">
+              <a href="/home">guardar y crear CODEQR</a>
+            </ion-button>
+          </ion-buttons>
+      </ion-list>
+    
+  </ion-card>
+</ion-content>

@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="padding: 5%;" class="ion-text-justify" >
+    <ion-text color="white">
+      <h3>Ingrese su correo institucional y una contraseña.</h3>
+    </ion-text>
+  </div>
+
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+
+    <div [formGroup]="ionicForm">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="stacked">Correo Institucional</ion-label>
+              <ion-input required formControlName="correo" type="text" placeholder="nombre@duocuc.cl" autofocus="true"></ion-input>
+            </ion-item>
+            <!-- Span para aviso de datos inválidos o necesarios. -->
+            <div class="ion-text-center" style="color: red;">
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.correo.errors?.required">
+                Se requiere un correo.
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.correo.errors?.pattern">
+                El correo debe ser válido.
+              </span>
+            </div>
+            <!-- // -->
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-input required formControlName="contrasena" type="password" placeholder="Contraseña" autofocus="true"></ion-input>
+            </ion-item>
+            <!-- Span para aviso de datos inválidos o necesarios. -->
+            <div class="ion-text-center" style="color: red;">
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contrasena.errors?.required">
+                Se requiere un contraseña.
+              </span>
+              <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contrasena.errors?.minlength">
+                Debe contener mínimo 8 caracteres.
+              </span>
+            </div>
+            <!--  -->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="ion-text-center" style="padding-top: 5%;">
+      <ion-list>
+        <ion-radio-group name="tipo" value="alumno" formControlName="tiporegistro" required>
+          <ion-list-header>
+            <ion-label>Tipo Registro</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Alumno</ion-label>
+            <ion-radio value="alumno"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label>Profesor</ion-label>
+            <ion-radio value="profesor"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+        <!-- Span de verificación -->
+        <div class="ion-text-center" style="color: red;">
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.tiporegistro.errors?.required">
+            Seleccione su tipo de cuenta.
+          </span>
+        </div>
+        <!--  -->
+      </ion-list>
+    </div>
+    <div [formGroup]="ionicForm">
+      <ion-row class="ion-padding">
+        <ion-col size="12">
+          <ion-button type="submit" expand="block" shape="round" class="ion-text-capitalize">
+            <ion-icon slot="start" name="person-add-outline"></ion-icon>Registrar Usuario
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </form>
+
+</ion-content>

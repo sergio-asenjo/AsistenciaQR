@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Alumno </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"> </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <ion-text color="primary">
+    <h1>¡Bienvenid@, {{ nombre }}!</h1>
+    <p>Usuario tipo: {{ tipo }}</p>
+  </ion-text>
+  <ion-fab horizontal="start" vertical="center" slot="fixed">
+    <ion-button color="#82b085">
+      <p>Programacion de aplicaciones_005D</p>
+    </ion-button>
+    <ion-fab-list side="bottom">
+      <ion-buttons>
+        <ion-button class="boton-escaner">
+          <ion-icon name="scan-circle-outline"></ion-icon>
+          AsistenciaQr
+        </ion-button>
+      </ion-buttons>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
